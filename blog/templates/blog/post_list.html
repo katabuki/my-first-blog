@@ -7,16 +7,13 @@
                 <h1><a href="">Natasza's Django Girls Blog</a></h1>
             </div>
 
-            <div>
-                <p>published: 24.06.2014, 16:00</p>
-                <h2><a href="">Moj pierwy post</a></h2>
-                <p>Сегодня весь день мы учимся создавать блог с помощью Django</p>
-            </div>
+            {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
 
-            <div>
-                <p>published: 24.06.2014, 16:01</p>
-                <h2><a href="">Ну и вторая запись</a></h2>
-                <p>Учимся и учимся, а что дальше непонятно :-)</p>
-            </div>
         </body>
     </html>
